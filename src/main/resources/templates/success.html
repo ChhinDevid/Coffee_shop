@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+
+<head th:replace="~{base :: head}"></head>
+
+<body>
+    <!-- Navbar Start -->
+    <div th:replace="~{base :: navbar}"></div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    
+    <div th:replace="~{base :: header(text='Booked Success')}"></div>
+    
+    <!-- Page Header End -->
+
+
+    <!-- Success Start -->
+	<div class="container-fluid py-5">
+	    <div class="container">
+	        <div class="section-title text-center mb-5">
+	            <h2 class="display-4 text-primary">Booking Success</h2>
+	            <p class="lead">Your table has been successfully booked. Here are your booking details:</p>
+	        </div>
+	        <div class="row justify-content-center">
+	            <div class="col-lg-8">
+	                <div class="card shadow-lg border-0">
+	                    <div class="card-header bg-primary text-white text-center">
+	                        <h3>Booking Details</h3>
+	                    </div>
+	                    <div class="card-body">
+	                        <table class="table table-striped table-bordered">
+	                            <tbody>
+	                            	<tr>
+	                                    <th scope="row">ID</th>
+	                                    <td th:text="${booked.id}"></td>
+	                                </tr>
+	                                <tr>
+	                                    <th scope="row">Name</th>
+	                                    <td th:text="${booked.name}"></td>
+	                                </tr>
+	                                <tr>
+	                                    <th scope="row">Phone Number</th>
+	                                    <td th:text="${booked.phoneNumber}"></td>
+	                                </tr>
+	                                <tr>
+	                                    <th scope="row">Email</th>
+	                                    <td th:text="${booked.email}"></td>
+	                                </tr>
+	                                <tr>
+	                                    <th scope="row">Date</th>
+	                                    <td th:text="${booked.date}"></td>
+	                                </tr>
+	                                <tr>
+	                                    <th scope="row">Time</th>
+	                                    <td th:text="${booked.time}"></td>
+	                                </tr>
+	                                <tr>
+	                                    <th scope="row">Number of Persons</th>
+	                                    <td th:text="${booked.person}"></td>
+	                                </tr>
+	                            </tbody>
+	                        </table>
+	                        <div class="text-center mt-4">
+	                            <a href="/" class="btn btn-primary px-4 py-2">Back to Home</a>
+	                            <a href="/reservation" class="btn btn-outline-primary px-4 py-2">Book Another Table</a>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </div>  
+	</div>
+	<!-- Success End -->
+    
+
+
+    <!-- Footer Start -->
+    <div th:replace="~{base :: footer}"></div>
+    <!-- Footer End -->
+
+	<div th:replace="~{base :: script}"></div>
+    
+</body>
+
+</html>
